@@ -1,0 +1,14 @@
+com\readshare\dao\CommentDaoTest.class
+com\readshare\BaseTest.class
+com\readshare\service\BookShelfServiceTest.class
+com\readshare\service\UserLoveServiceTest.class
+com\readshare\service\CommentServiceTest.class
+com\readshare\dao\MessageDaoTest.class
+com\readshare\dao\BookShelfDaoTest.class
+com\readshare\service\UserServiceTest.class
+com\readshare\service\RRServiceTest.class
+com\readshare\dao\ReadRecordDaoTest.class
+com\readshare\service\MsgServiceTest.class
+com\readshare\dao\UserDaoTest.class
+com\readshare\dao\BookDaoTest.class
+com\readshare\service\BookServiceTest.class

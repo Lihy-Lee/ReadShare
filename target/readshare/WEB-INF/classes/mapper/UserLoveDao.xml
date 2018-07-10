@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.readshare.dao.UserLoveDao">
+	<insert id="insertUserLove"
+		parameterType="com.readshare.entity.UserLove">
+		insert into
+		userlove(user_id,book_id)
+		values
+		(#{user.userId},#{book.bookId})
+	</insert>
+	<delete id="deleteUserLove"
+		parameterType="com.readshare.entity.UserLove">
+		delete from userlove
+		where user_id=#{user.userId} and
+		book_id=#{book.bookId}
+	</delete>
+
+	<select id="queryUserLoveByUserId"
+		resultType="com.readshare.entity.Book">
+		select userlove.book_id,book_name,cover_url
+		from userlove
+		natural join book
+		where userlove.user_id=#{userId}
+	</select>
+
+
+</mapper>

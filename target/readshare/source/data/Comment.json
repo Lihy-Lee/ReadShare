@@ -1,0 +1,60 @@
+{
+    "bookID":1012611,
+    "userID":201525010101,
+    "userToBook":{
+        "boolBookshelf":true,
+        "boolRead":false,
+        "boolLove":true
+    },
+    "commentList":[
+        {
+            "comId":1,
+            "userid":201525010101,
+            "icon":"http://p9614dq2w.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180620222035.jpg",
+            "username":"热心市民黄先生",
+            "mark":"我是楼主",
+            "time":"2018-01-03 09:10:20",
+            "reply":[{
+                "replyId":1,
+                "username":"才子",
+                "mark":"对对对 你楼主l",
+                "beReply":"gfdbfdsb"
+            },
+            {
+                "replyId":2,                
+                "username":"佳人",
+                "mark":"这是一本好书",
+                "beReply":""                
+            }]
+        },
+        {
+            "comId":2,            
+            "userid":201525010102,
+            "icon":"http://p9614dq2w.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180620222053.jpg",
+            "username":"我精神上的父亲",
+            "mark":"我是二楼的",
+            "time":"2018-07-03 09:10:20",            
+            "reply":[{
+                "replyId":3,
+                "username":"才华兼备",
+                "mark":"对对对 你楼主",
+                "beReply":""                                
+            },
+            {
+                "replyId":4,                
+                "username":"佳人",
+                "mark":"这是一本好书",
+                "beReply":"fsdfasdfsadfsda"
+            }]
+        },
+        {
+            "comId":3,                        
+            "userid":201525010103,
+            "icon":"http://p9614dq2w.bkt.clouddn.com/photo.jpg",            
+            "username":"等等 女皇",
+            "mark":"我猜我的评论没人回复",
+            "time":"2018-07-03 09:10:20",                        
+            "reply":null
+        }
+    ]
+}

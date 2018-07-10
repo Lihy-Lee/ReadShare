@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.readshare.dao.BookShelfDao">
+	<insert id="insertBookShelf"
+		parameterType="com.readshare.entity.BookShelf">
+		insert into
+		bookshelf(user_id,book_id)
+		values(#{user.userId},#{book.bookId})
+	</insert>
+
+	<delete id="deleteBookShelf"
+		parameterType="com.readshare.entity.BookShelf">
+		delete from bookshelf
+		where user_id=#{user.userId} and
+		book_id=#{book.bookId}
+	</delete>
+
+	<select id="queryBookShelf"
+		resultType="com.readshare.entity.Book">
+		select book.book_id,book_name,cover_url
+		from
+		bookshelf natural join book
+		where bookshelf.user_id=#{userId}
+	</select>
+
+
+</mapper>

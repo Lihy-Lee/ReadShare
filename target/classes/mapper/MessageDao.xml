@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.readshare.dao.MessageDao">
+	<insert id="insertMsg"
+		parameterType="com.readshare.entity.Message" useGeneratedKeys="true"
+		keyColumn="reply_id" keyProperty="replyId">
+		INSERT
+		INTO
+		message(user_id,mark,com_id,bereply,support,create_time)
+		VALUES(#{userId},#{mark},#{comId},#{beReply},#{support},#{createTime})
+	</insert>
+
+	<delete id="deleteMsg">
+		DELETE FROM message
+		WHERE reply_id=#{replyId}
+	</delete>
+
+	<!-- 更新留言信息，其中，留言信息内只允许修改一次被回复的内容,以及可以多次修改点赞次数 -->
+	<update id="updateMsg"
+		parameterType="com.readshare.entity.Message">
+		UPDATE message
+		<set>
+			<if test="beReply!=null">bereply=#{beReply},</if>
+			<if test="support!=null">support=#{support}</if>
+		</set>
+		WHERE reply_id=#{replyId}
+	</update>
+
+	<select id="queryMsgList"
+		resultType="com.readshare.entity.Message">
+		SELECT
+		reply_id,com_id,user.user_name,mark,bereply,support,create_time
+		FROM
+		message natural join user
+		WHERE com_id=#{comId}
+	</select>
+
+</mapper>

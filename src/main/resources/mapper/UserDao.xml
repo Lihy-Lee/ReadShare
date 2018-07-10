@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.readshare.dao.UserDao">
+	<!-- useGeneratedKeys插入完成，立即返回店铺的id信息 -->
+	<insert id="insertUser" useGeneratedKeys="true"
+		keyColumn="user_id" keyProperty="userId">
+		INSERT INTO
+		user(user_name,sex,avatar_url,user_mobile,password)
+		VALUES
+		(#{userName},#{sex},#{icon},#{userMobile},#{password})
+	</insert>
+
+	<update id="updateUserInfo"
+		parameterType="com.readshare.entity.User">
+		<!-- 使用动态SQl -->
+		update user
+		<set>
+			<if test="userName!=null"> user_name=#{userName},</if>
+			<if test="sex!=null"> sex=#{sex},</if>
+			<if test="icon!=null"> avatar_url=#{icon},</if>
+			<if test="userMobile!=null"> user_mobile=#{userMobile},</if>
+			<if test="password!=null"> password=#{password}</if>
+		</set>
+		where user_id=#{userId}
+	</update>
+
+	<select id="queryUserByName"
+		resultType="com.readshare.entity.User">
+		select user_id,user_name,sex
+		from user
+		where
+		user_name like
+		concat('%',#{userName},'%')
+	</select>
+
+	<select id="queryAllUser" resultType="com.readshare.entity.User">
+		select
+		user_id,user_name,sex
+		from user
+	</select>
+	<select id="queryUserByMoblie"
+		resultType="com.readshare.entity.User">
+		select user_id,user_name,sex,password,user_mobile
+		from user
+		where
+		user_mobile=#{userMobile}
+	</select>
+	<select id="queryUserByUserId"
+		resultType="com.readshare.entity.User">
+		select
+		user_id,user_name,sex,avatar_url,user_mobile,password
+		from user
+		where
+		user_id=#{userId}
+	</select>
+	<delete id="deleteUser">
+		delete from user
+		where user_id=#{userId}
+	</delete>
+
+
+</mapper>

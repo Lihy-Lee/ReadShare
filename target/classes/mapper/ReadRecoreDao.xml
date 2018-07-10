@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.readshare.dao.ReadRecordDao">
+	<insert id="insertReadRecord"
+		parameterType="com.readshare.entity.ReadRecord">
+		insert into
+		readrecord(user_id,book_id)
+		values
+		(#{user.userId},#{book.bookId})
+	</insert>
+	<delete id="deleteReadRecord"
+		parameterType="com.readshare.entity.ReadRecord">
+		delete from readrecord
+		where user_id=#{user.userId} and
+		book_id=#{book.bookId}
+	</delete>
+
+	<select id="queryReadRecord"
+		resultType="com.readshare.entity.Book">
+		select readrecord.book_id,book_name,cover_url
+		from
+		readrecord natural join book
+		where readrecord.user_id=#{userId}
+	</select>
+
+
+</mapper>

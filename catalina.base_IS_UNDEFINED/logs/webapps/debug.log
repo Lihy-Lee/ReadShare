@@ -1,0 +1,24 @@
+2018-07-08 10:19:51.210 [main] DEBUG com.readshare.dao.BookShelfDao.queryBookShelf-==>  Preparing: select book.book_id,book_name,cover_url from bookshelf natural join book where bookshelf.user_id=? 
+2018-07-08 10:19:51.302 [main] DEBUG com.readshare.dao.BookShelfDao.queryBookShelf-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.523 [main] DEBUG com.readshare.dao.BookShelfDao.queryBookShelf-<==      Total: 1
+2018-07-08 10:19:51.542 [main] DEBUG com.readshare.dao.CommentDao.queryCommentByUserId-==>  Preparing: select com_id,user_id,book_id,mark,create_time,support from comment where user_id=? 
+2018-07-08 10:19:51.543 [main] DEBUG com.readshare.dao.CommentDao.queryCommentByUserId-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.584 [main] DEBUG com.readshare.dao.CommentDao.queryCommentByUserId-<==      Total: 0
+2018-07-08 10:19:51.599 [main] DEBUG com.readshare.dao.ReadRecordDao.queryReadRecord-==>  Preparing: select readrecord.book_id,book_name,cover_url from readrecord natural join book where readrecord.user_id=? 
+2018-07-08 10:19:51.600 [main] DEBUG com.readshare.dao.ReadRecordDao.queryReadRecord-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.679 [main] DEBUG com.readshare.dao.ReadRecordDao.queryReadRecord-<==      Total: 1
+2018-07-08 10:19:51.694 [main] DEBUG com.readshare.dao.UserDao.queryUserByUserId-==>  Preparing: select user_id,user_name,sex,avatar_url,user_mobile,password from user where user_id=? 
+2018-07-08 10:19:51.694 [main] DEBUG com.readshare.dao.UserDao.queryUserByUserId-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.773 [main] DEBUG com.readshare.dao.UserDao.queryUserByUserId-<==      Total: 1
+2018-07-08 10:19:51.774 [main] DEBUG com.readshare.dao.BookShelfDao.queryBookShelf-==>  Preparing: select book.book_id,book_name,cover_url from bookshelf natural join book where bookshelf.user_id=? 
+2018-07-08 10:19:51.775 [main] DEBUG com.readshare.dao.BookShelfDao.queryBookShelf-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.779 [main] DEBUG com.readshare.dao.BookShelfDao.queryBookShelf-<==      Total: 1
+2018-07-08 10:19:51.780 [main] DEBUG com.readshare.dao.CommentDao.queryCommentByUserId-==>  Preparing: select com_id,user_id,book_id,mark,create_time,support from comment where user_id=? 
+2018-07-08 10:19:51.782 [main] DEBUG com.readshare.dao.CommentDao.queryCommentByUserId-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.784 [main] DEBUG com.readshare.dao.CommentDao.queryCommentByUserId-<==      Total: 0
+2018-07-08 10:19:51.785 [main] DEBUG com.readshare.dao.ReadRecordDao.queryReadRecord-==>  Preparing: select readrecord.book_id,book_name,cover_url from readrecord natural join book where readrecord.user_id=? 
+2018-07-08 10:19:51.788 [main] DEBUG com.readshare.dao.ReadRecordDao.queryReadRecord-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.791 [main] DEBUG com.readshare.dao.ReadRecordDao.queryReadRecord-<==      Total: 1
+2018-07-08 10:19:51.792 [main] DEBUG c.readshare.dao.UserLoveDao.queryUserLoveByUserId-==>  Preparing: select userlove.book_id,book_name,cover_url from userlove natural join book where userlove.user_id=? 
+2018-07-08 10:19:51.792 [main] DEBUG c.readshare.dao.UserLoveDao.queryUserLoveByUserId-==> Parameters: 3(Integer)
+2018-07-08 10:19:51.830 [main] DEBUG c.readshare.dao.UserLoveDao.queryUserLoveByUserId-<==      Total: 1
